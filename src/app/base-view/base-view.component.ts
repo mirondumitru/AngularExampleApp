@@ -18,7 +18,8 @@ export class BaseViewComponent {
 
   carList:any[];
 
-  inputTextToBePassed:string;
+  firstText:string;
+  secondText:string;
 
   constructor(inputService:InputService) {
     this.textModel = "ngModelText";
@@ -33,7 +34,8 @@ export class BaseViewComponent {
     this.carList = [];
     this.bindCars();
 
-    this.inputTextToBePassed = inputService.getInputText(150);
+    this.firstText = inputService.generateInputText();
+    this.secondText = inputService.generateInputText();
   }
 
   useDefaultClasses()  {

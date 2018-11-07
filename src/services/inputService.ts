@@ -2,7 +2,8 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class InputService {
-    getInputText(id: number): string {
-        return "Input string for ID "+id;
+    generateInputText(): string {
+        var id = Math.random() * 100;
+        return "Input string for ID " + Math.floor(id);
     }
 }
