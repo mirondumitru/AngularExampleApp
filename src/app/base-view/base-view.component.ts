@@ -34,9 +34,12 @@ export class BaseViewComponent {
     this.carList = [];
     this.bindCars();
 
-    this.firstText = inputService.generateInputText();
+    // this.firstText = inputService.generateInputText();
+    this.firstText = "custom text";
     this.secondText = inputService.generateInputText();
   }
+
+  someNumber: number = 500;
 
   useDefaultClasses()  {
     this.currentClasses = {
