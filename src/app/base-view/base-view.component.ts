@@ -18,10 +18,11 @@ export class BaseViewComponent {
 
   carList:any[];
 
-  firstText:string;
-  secondText:string;
+  inputService:InputService;  
 
   constructor(inputService:InputService) {
+    this.inputService = inputService;
+
     this.textModel = "ngModelText";
 
     this.shouldHaveBoldText = true;
@@ -33,13 +34,13 @@ export class BaseViewComponent {
 
     this.carList = [];
     this.bindCars();
-
-    // this.firstText = inputService.generateInputText();
-    this.firstText = "custom text";
-    this.secondText = inputService.generateInputText();
   }
 
-  someNumber: number = 500;
+  inputViewText: string;
+
+  saveInput() {
+    this.inputService.saveInput(this.inputViewText);
+  }
 
   useDefaultClasses()  {
     this.currentClasses = {

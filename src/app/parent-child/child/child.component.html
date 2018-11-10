@@ -1,0 +1,11 @@
+
+<div class="child">
+  <div>
+    {{child.name}}
+  </div>
+  <div class="ball" *ngFor="let ball of child.balls" (click)="passBall()"></div>
+  <br/>
+  <h5>
+    Click a ball to pass it!
+  </h5>
+</div>

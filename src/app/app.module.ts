@@ -9,6 +9,10 @@ import { BaseViewComponent } from './base-view/base-view.component';
 import { NotFoundViewComponent } from './not-found-view/not-found-view.component';
 import { InputViewComponent } from './base/input-view/input-view.component';
 import { InputService } from 'src/services/inputService';
+import { ParentComponent } from './parent-child/parent/parent.component';
+import { ChildComponent } from './parent-child/child/child.component';
+import { ServiceExampleComponent } from './service-example/service-example.component';
+import { IdService } from 'src/services/idService';
 
 @NgModule({
   declarations: [
@@ -17,13 +21,16 @@ import { InputService } from 'src/services/inputService';
     BaseViewComponent,
     NotFoundViewComponent,
     InputViewComponent,
+    ParentComponent,
+    ChildComponent,
+    ServiceExampleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [InputService],
+  providers: [InputService, IdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

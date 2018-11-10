@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.panel{
+    width: 500px;
+    height: 200px;
+    padding: 15px;
+    left: 0;
+    right: 0;
+    border: 2px solid lightslategrey;
+    margin: 15px;
+}

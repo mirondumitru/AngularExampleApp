@@ -1,9 +1,22 @@
 import { Injectable } from "@angular/core";
+import { IdService } from "./idService";
 
 @Injectable()
 export class InputService {
-    generateInputText(): string {
-        var id = Math.random() * 100;
-        return "Input string for ID " + Math.floor(id);
+
+    idService: IdService;
+
+    constructor(idService:IdService) {
+        this.idService = idService;
     }
+
+    generateInputText(): string {
+        var id = this.idService.getId();
+        return "Input string for ID " + id;
+    }
+
+    saveInput(input:string): void{
+
+    }
+
 }
