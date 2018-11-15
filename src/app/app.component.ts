@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   private router:Router;
-  
+
   constructor(router: Router)  {
     this.router = router;
   }

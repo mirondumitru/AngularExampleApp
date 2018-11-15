@@ -7,3 +7,36 @@ button{
     height: 40px;
     background-color: beige;
 }
+
+.boderRight{
+    border-right: 5px solid gray;
+}
+.borderBottom{
+    border-bottom: 5px solid gray;
+}
+
+#myDiv {
+    background-color: blue;
+    height: 32px;
+    width: 32px;
+    position: relative;
+}
+
+/* this should draw a red line through the center of the image */
+
+#myDiv {
+    background-color: blue;
+    height: 32px;
+    width: 32px;
+    position: relative;
+}
+
+
+#myDiv:after{
+  content:"";
+  position:absolute;
+  border-top:5px solid red;
+  width: 45px;
+  transform: rotate(45deg);
+  transform-origin: 5% 5%;
+}

@@ -13,6 +13,9 @@ import { ParentComponent } from './parent-child/parent/parent.component';
 import { ChildComponent } from './parent-child/child/child.component';
 import { ServiceExampleComponent } from './service-example/service-example.component';
 import { IdService } from 'src/services/idService';
+import { UserComponent } from './user/user.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { IdService } from 'src/services/idService';
     InputViewComponent,
     ParentComponent,
     ChildComponent,
-    ServiceExampleComponent
+    ServiceExampleComponent,
+    UserComponent,
+    UsersListComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

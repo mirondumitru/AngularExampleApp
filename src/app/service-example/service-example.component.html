@@ -1,4 +1,6 @@
 <div class="panel">
     <h2>Components</h2>
-    <input-view [text]="inputViewText"></input-view>
+    <input-view [inputNumber]="prop1" (onSomething)="eventEmitted($event)"></input-view>
+    <input-view [inputNumber]="prop2" (onSomething)="eventEmitted($event)"></input-view>
+    <input-view [inputNumber]="prop3" (onSomething)="eventEmitted($event)"></input-view>
 </div>

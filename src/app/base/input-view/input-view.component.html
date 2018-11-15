@@ -1,8 +1,6 @@
 <div class="inputPanel">
   <p>
-    This is my input: <strong>{{text}}</strong>
+    This is my number: <strong>{{inputNumber}}</strong>
   </p>
-  <p *ngIf="otherNumber">
-    This is my number: <strong>{{otherNumber}}</strong>
-  </p>
+  <button (click)="emitMyNumber()">Emit Event</button>
 </div>

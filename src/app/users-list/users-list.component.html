@@ -1,0 +1,15 @@
+<div style="display:inline-block;">
+  <div class="userCell" style="font-weight: bold;"> 
+      Username
+  </div>
+  <div class="userCell" style="font-weight: bold;">
+      Email
+    </div>
+    <div class="userCell" style="font-weight: bold;">
+      Is Active
+      </div>
+  <div *ngFor="let us of usersList" >
+    <app-user [user]="us"></app-user>
+  </div>
+  <app-add-user (onAdd)="addUser($event)"></app-add-user>
+</div>

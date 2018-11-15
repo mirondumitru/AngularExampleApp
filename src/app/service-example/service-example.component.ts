@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InputService } from 'src/services/inputService';
+import { IdService } from 'src/services/idService';
 
 @Component({
   selector: 'app-service-example',
@@ -8,13 +9,26 @@ import { InputService } from 'src/services/inputService';
 })
 export class ServiceExampleComponent implements OnInit {
 
-  inputViewText:string;
+  idService:IdService;
 
-  constructor(inputService:InputService) { 
-    this.inputViewText = inputService.generateInputText();
+  prop1:number;
+  prop2:number;
+  prop3:number;
+
+
+  constructor(idService:IdService) { 
+    this.idService = idService;
+
+    this.prop1 = this.idService.getId();
+    this.prop2 = this.idService.getId();
+    this.prop3 = this.idService.getId();
   }
 
   ngOnInit() {
   }
 
+  eventEmitted(value: number): void{
+    console.log('[parent] got value: '+value);
+    alert(value);
+  }
 }
