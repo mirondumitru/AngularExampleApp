@@ -8,8 +8,11 @@ import { Child } from 'src/classes/child';
 })
 export class ChildComponent implements OnInit {
 
-  @Input()child: Child;
-  @Output()emitPass: EventEmitter<number> = new EventEmitter<number>();
+  @Input()
+  child: Child;
+  
+  @Output()
+  emitPass: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 

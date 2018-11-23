@@ -5,6 +5,7 @@ import { DetailViewComponent } from './detail-view/detail-view.component';
 import { NotFoundViewComponent } from './not-found-view/not-found-view.component';
 import { ParentComponent } from './parent-child/parent/parent.component';
 import { ServiceExampleComponent } from './service-example/service-example.component';
+import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { UsersListComponent } from './users-list/users-list.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'detail-view', component: DetailViewComponent},
   { path: 'not-found', component: NotFoundViewComponent},
   { path: 'parent-child', component: ParentComponent},
+  { path: 'tic-tac-toe', component: TicTacToeComponent},
   { path: 'users-list', component: UsersListComponent},
   { path: '',
     redirectTo: '/base-view',

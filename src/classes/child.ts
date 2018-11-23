@@ -1,5 +1,5 @@
 export class Child{
-    balls: Array<boolean>;
+    balls: boolean[];
     name: string;
     id: number;
 

@@ -29,7 +29,7 @@ ngOnInit() {
 
 passBall(id: number) {
   if (id == 1) {
-    this.child1.removeBall();;
+    this.child1.removeBall();
     this.child2.addBall();
   } else if (id == 2) {
     this.child2.removeBall();

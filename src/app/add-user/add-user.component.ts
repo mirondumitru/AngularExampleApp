@@ -1,32 +1,25 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { User } from 'src/classes/user';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { User } from 'src/models/user';
 
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent implements OnInit {
+export class AddUserComponent {
 
-  user: User;
+  user:User;
 
   @Output()
-  onAdd: EventEmitter<User> = new EventEmitter();
+  userAdded: EventEmitter<User> = new EventEmitter();
 
-  constructor() { 
-    this.clearUser();
+  constructor() {
+    this.user = new User();  
   }
 
-  clearUser()  {
-    this.user = new User();
-  }
-
-  ngOnInit() {
-  }
-
-  addUser() {
-    this.onAdd.emit(this.user);
-
-    this.clearUser();
+  addUser(){
+    console.log(this.user);
+    this.userAdded.emit(this.user);
+    this.user = new User();  
   }
 }

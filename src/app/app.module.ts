@@ -13,9 +13,13 @@ import { ParentComponent } from './parent-child/parent/parent.component';
 import { ChildComponent } from './parent-child/child/child.component';
 import { ServiceExampleComponent } from './service-example/service-example.component';
 import { IdService } from 'src/services/idService';
-import { UserComponent } from './user/user.component';
-import { UsersListComponent } from './users-list/users-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { TicTacToeCellComponent } from './tic-tac-toe-cell/tic-tac-toe-cell.component';
+import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { UserComponent } from './user/user.component';
+import { UsersService } from 'src/services/usersService';
+import { Http, HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -27,16 +31,19 @@ import { AddUserComponent } from './add-user/add-user.component';
     ParentComponent,
     ChildComponent,
     ServiceExampleComponent,
-    UserComponent,
+    AddUserComponent,
+    TicTacToeCellComponent,
+    TicTacToeComponent,
     UsersListComponent,
-    AddUserComponent
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [InputService, IdService],
+  providers: [InputService, IdService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

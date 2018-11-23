@@ -1,10 +1,9 @@
-<div class="userCell">
-  {{user.username}}
+<div class="tableCell">
+    {{user.username}}
 </div>
-<div class="userCell">
+<div class="tableCell">
     {{user.email}}
-  </div>
-<div class="userCell">
-    <input type="checkbox" disabled [(ngModel)]="user.isActive">
 </div>
-    
+<div class="tableCell">
+    <input type="checkbox" [(ngModel)]="user.isActive" disabled>
+</div>

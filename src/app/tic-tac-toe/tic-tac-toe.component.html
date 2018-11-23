@@ -1,0 +1,11 @@
+<div style="margin:50px;">
+  <div *ngFor="let line of table; let l=index" style="display:table;"
+      [style.border-bottom]="l != 2 ? '5px solid gray' : ''">
+      
+    <div *ngFor="let cell of line; let c=index" style="float:left;" 
+          [style.border-right]="c != 2 ? '5px solid gray' : ''">
+
+        <app-tic-tac-toe-cell [line]="l" [column]="c" [value]="cell" (cellClicked)="cellUpdate($event)"></app-tic-tac-toe-cell>
+    
+    </div>
+</div>

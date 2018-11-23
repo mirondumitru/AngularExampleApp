@@ -1,15 +1,11 @@
-<div style="display:inline-block;">
-  <div class="userCell" style="font-weight: bold;"> 
-      Username
+<div *ngIf="isLoading">
+  <h2>Loading...</h2>
+</div>
+<div *ngIf="!isLoading">
+  <div *ngFor="let user of usersList" class="tableRow">
+    <app-user [user]="user"></app-user>
   </div>
-  <div class="userCell" style="font-weight: bold;">
-      Email
-    </div>
-    <div class="userCell" style="font-weight: bold;">
-      Is Active
-      </div>
-  <div *ngFor="let us of usersList" >
-    <app-user [user]="us"></app-user>
+  <div class="tableRow">
+    <app-add-user (userAdded)="userAdded($event)"></app-add-user>
   </div>
-  <app-add-user (onAdd)="addUser($event)"></app-add-user>
 </div>
