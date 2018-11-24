@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { InputService } from 'src/services/inputService';
+import { GarageService } from 'src/services/inputService';
+import { Car } from 'src/classes/car';
 
 @Component({
   selector: 'app-base-view',
@@ -18,29 +19,35 @@ export class BaseViewComponent {
 
   carList:any[];
 
-  inputService:InputService;  
+  garage:GarageService;  
+  car:Car;
 
-  constructor(inputService:InputService) {
-    this.inputService = inputService;
+  constructor(garage:GarageService) {
+    this.garage = garage;
+    this.car = new Car();
+    this.car.model = "BMW";
+    this.car.vin= "ASDT112445FASAGTTE";
+    this.car.oilChanged = false;
+  }
 
-    this.textModel = "ngModelText";
+  changeOil() {
+    console.log("before: ");
+    console.log(this.car.oilChanged);
 
-    this.shouldHaveBoldText = true;
-   
-    this.useDefaultClasses();
 
-    // comment the line below to see ngIf functionality
-    this.employee = new Employee("John", "Doe");
+    this.garage.changeOil(this.car);
 
-    this.carList = [];
-    this.bindCars();
+
+    console.log("after: ");
+    console.log(this.car.oilChanged);
+
+    setTimeout(x=>{
+      this.car.oilChanged = false;
+    }, 2000)
   }
 
   inputViewText: string;
 
-  saveInput() {
-    this.inputService.saveInput(this.inputViewText);
-  }
 
   useDefaultClasses()  {
     this.currentClasses = {

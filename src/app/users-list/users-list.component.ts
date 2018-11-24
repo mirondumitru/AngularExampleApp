@@ -28,7 +28,6 @@ export class UsersListComponent implements OnInit {
     
     this.usersService.save(user).subscribe(res=>{
       this.isLoading = false;
-
       this.getUsers();
     });
   }

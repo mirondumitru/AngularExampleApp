@@ -1,13 +1,18 @@
 import { Injectable } from "@angular/core";
 import { IdService } from "./idService";
+import { Car } from "src/classes/car";
 
 @Injectable()
-export class InputService {
+export class GarageService {
 
     idService: IdService;
 
     constructor(idService:IdService) {
         this.idService = idService;
+    }
+
+    changeOil(car:Car):void{       
+        car.oilChanged = true;
     }
 
     generateInputText(): string {
@@ -18,5 +23,4 @@ export class InputService {
     saveInput(input:string): void{
 
     }
-
 }

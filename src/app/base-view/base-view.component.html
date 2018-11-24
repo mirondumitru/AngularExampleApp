@@ -12,13 +12,13 @@
 </div>
 
 
-<div class="panel">
+<div class="panel" *ngIf="shouldHaveBoldText">
  <h2>NgStyle</h2>
 <input type="checkbox" [(ngModel)]="shouldHaveBoldText">
  <button [style.font-weight]="shouldHaveBoldText ? 'bold' : 'normal'" (click)="logMessage('Message from NgStyle')">Some Button</button>
 </div>
 
-<div class="panel">
+<div class="panel" *ngIf="shouldHaveBoldText">
  <h2>NgClass</h2>
  <input type="checkbox" [(ngModel)]="shouldHaveBoldText">
  <button [class.boldText]="shouldHaveBoldText">Some Button</button>
@@ -60,4 +60,14 @@
  <div *ngFor="let car of carList; let i=index">
    {{i}}. My car is {{car.model}} ({{car.desc}})
   </div>
+</div>
+
+<div class="panel">
+  <h2>My car</h2>
+  <div>
+   <h2>{{car.model}}</h2>
+   <h3>{{car.vin}}</h3>
+   <h3>Should Change Oil : {{!car.oilChanged}}</h3>
+  </div>
+  <button *ngIf="car.oilChanged == false" (click)="changeOil()">Change Oil</button>
 </div>

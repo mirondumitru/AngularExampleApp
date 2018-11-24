@@ -15,6 +15,7 @@ export class AddUserComponent {
 
   constructor() {
     this.user = new User();  
+    console.log(new Date());
   }
 
   addUser(){
