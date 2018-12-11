@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { InputService } from 'src/services/inputService';
 import { IdService } from 'src/services/idService';
 
 @Component({

@@ -23,27 +23,28 @@ export class BaseViewComponent {
   car:Car;
 
   constructor(garage:GarageService) {
-    this.garage = garage;
-    this.car = new Car();
-    this.car.model = "BMW";
-    this.car.vin= "ASDT112445FASAGTTE";
-    this.car.oilChanged = false;
+    // this.garage = garage;
+    // this.car = new Car();
+    // this.car.model = "BMW";
+    // this.car.vin= "ASDT112445FASAGTTE";
+    // this.car.oilChanged = false;
+
   }
 
   changeOil() {
     console.log("before: ");
-    console.log(this.car.oilChanged);
+  //  console.log(this.car.oilChanged);
 
 
     this.garage.changeOil(this.car);
 
 
-    console.log("after: ");
-    console.log(this.car.oilChanged);
+    // console.log("after: ");
+    // console.log(this.car.oilChanged);
 
-    setTimeout(x=>{
-      this.car.oilChanged = false;
-    }, 2000)
+    // setTimeout(x=>{
+    //   this.car.oilChanged = false;
+    // }, 2000)
   }
 
   inputViewText: string;

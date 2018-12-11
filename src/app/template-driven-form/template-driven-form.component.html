@@ -1,0 +1,33 @@
+<form style="width:50%; margin:30px;" #carForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input #manufacturer="ngModel" required type="text" [(ngModel)]="car.manufacturer" name="manufacturer" placeholder="Manufacturer..."
+      class="form-control">
+    <div [hidden]="manufacturer.valid || manufacturer.pristine" class="alert alert-danger">
+      Manufacturer is required
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" #vin="ngModel" [(ngModel)]="car.vin" name="vin" 
+      required minlength="17" maxlength="17"
+      placeholder="Vin Code..." class="form-control">
+        <div [hidden]="vin.pristine || vin.valid" class="alert alert-danger">
+            Vin is invalid
+        </div>
+        <div [hidden]="vin.pristine || vin.value.length > 0" class="alert alert-danger">
+            Vin is required
+        </div>
+  </div>
+  <div class="form-group">
+    <input type="number" [(ngModel)]="car.year" name="year" placeholder="Year..." class="form-control">
+  </div>
+  <select class="form-control" id="engine" required [(ngModel)]="car.engine" name="engine" #engine="ngModel">
+    <option *ngFor="let eng of engines" [value]="eng">{{eng}}</option>
+  </select>
+  <div class="form-group">
+    <input type="checkbox" [(ngModel)]="car.forSale" name="forSale" id="forSale">
+    <label class="form-check-label" for="forSale">Is For Sale ? </label>
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="!carForm.form.valid" class="btn btn-primary">Save </button>
+  </div>
+</form>
