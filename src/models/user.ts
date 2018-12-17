@@ -2,6 +2,8 @@ export class User{
     username: string;
     email: string;
     isActive: boolean;
+    identifier:string;
+    _created:string;
 }
 
 

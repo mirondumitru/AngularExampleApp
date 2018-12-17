@@ -18,26 +18,27 @@ export class UsersListComponent implements OnInit {
 
   usersList: User[];
 
-  constructor(usersService: UsersService) { 
-    this.usersList = [];
+  constructor(usersService: UsersService) {
     this.usersService = usersService;
+    this.isLoading = false;
   }
 
-  userAdded(user:User){
+  userAdded(user: User) {
     this.isLoading = true;
-    
-    this.usersService.save(user).subscribe(res=>{
-      this.isLoading = false;
-      this.getUsers();
+
+    this.usersService.save(user).subscribe(x=>{
+      console.log(x);
     });
   }
 
   getUsers(): any {
-    this.isLoading = true;
+    this.isLoading = false;
 
-    this.usersService.getAll().subscribe(users =>{
-      this.usersList = users;
-      this.isLoading = false;
-    })
+    this.usersService.getAll().subscribe(response => {
+      // this.usersList = users;
+      // this.isLoading = false;
+
+      console.log(response)
+    });
   }
 }

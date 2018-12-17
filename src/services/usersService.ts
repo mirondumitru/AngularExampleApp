@@ -1,9 +1,10 @@
 import { Injectable } from "@angular/core";
 import { User } from "src/models/user";
-import { Observable } from "rxjs";
+import { Observable, from, of } from "rxjs";
 import { Http, Response, RequestOptionsArgs } from '@angular/http';
 import { map } from 'rxjs/operators';
 import { RequestArgs } from "@angular/http/src/interfaces";
+import { Car } from "src/classes/car";
 
 @Injectable()
 export class UsersService {
@@ -15,25 +16,18 @@ export class UsersService {
         'content-type': 'application/json'
     };
 
-    carsUrl: string = "https://testapp-5f69.restdb.io/rest/cars";
     employeesUrl: string = "https://testapp-5f69.restdb.io/rest/employees";
 
     constructor(http: Http) {
         this.http = http;
     }
 
-    getEmployees(): any {
-        return this.http.get(this.employeesUrl);
-    }
-
-    getCars(): any {
-        return this.http.get(this.carsUrl);
-    }
-
     getAll(): Observable<User[]> {
-        var mapResponse = map((data: Response) => data.json());
+        var mapToUsers = map((res:Response)=>{
+            return res.json();
+        });
 
-        return this.http.get(this.employeesUrl, { headers: this.headers }).pipe(mapResponse);
+        return mapToUsers(this.http.get(this.employeesUrl, { headers: this.headers }));
     }
 
     save(user: User): Observable<Response> {

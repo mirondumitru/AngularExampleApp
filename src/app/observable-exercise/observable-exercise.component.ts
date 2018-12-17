@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { of, from, Scheduler, fromEvent, Observable, Subscription } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-observable-exercise',
@@ -11,29 +11,26 @@ export class ObservableExerciseComponent implements OnInit {
 
   subscription: Subscription;
 
-  clearOnESC: boolean;
-
   constructor() {
-    this.clearOnESC = true;
 
-    var obervable = of(1, 2, 3, 4, 5)
+    var obervable = of("abc", undefined, "bd", "a")
 
-    var makeSquare = map((val: number) => val * val);
+    var makeSquare = map((val: string) => val.length);
     var excludeOdds = filter((val: number) => val % 2 == 0);
 
     var subscribeHandlers = {
-      next: x => console.log(x),
-      error: err => { console.log(err.message) },
+      next: x => console.log(x.length),
+      error: err => { console.log(err) },
       complete: () => { console.log("completed") }
     }
 
-    obervable.pipe(excludeOdds, makeSquare).subscribe(subscribeHandlers);
+    obervable.subscribe(subscribeHandlers);
 
-    var subscription = obervable.subscribe(subscribeHandlers);
+    // var subscription = obervable.subscribe(subscribeHandlers);
 
-    setTimeout(() => {
-      subscription.unsubscribe()
-    }, 5000);
+    // setTimeout(() => {
+    //   subscription.unsubscribe()
+    // }, 5000);
   }
 
   ngOnInit() {
@@ -56,10 +53,12 @@ export class ObservableExerciseComponent implements OnInit {
     var nameInput = document.getElementById('name') as HTMLInputElement;
     var observable = fromEvent(nameInput, 'keydown');
 
-    return observable.subscribe((e: any) => {
+    var subscription =  observable.subscribe((e: any) => {
       if (e.keyCode === 27) {
         nameInput.value = '';
       }
     });
+
+    return subscription;
   }
 }

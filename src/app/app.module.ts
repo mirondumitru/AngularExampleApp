@@ -19,10 +19,10 @@ import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserComponent } from './user/user.component';
 import { UsersService } from 'src/services/usersService';
-import { Http, HttpModule } from '@angular/http';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ObservableExerciseComponent } from './observable-exercise/observable-exercise.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
