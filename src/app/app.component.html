@@ -1,13 +1,16 @@
 <div id="menu">
-    <button routerLink="base-view">Base View</button>
+    <button [routerLink]="['/users-list', parameter]">Go To User</button>
     <button routerLink="detail-view">Detail View</button>
-    <button routerLink="parent-child">Parent-Child Example</button>
-    <button routerLink="services-example">Services Example</button>
-    <button routerLink="users-list">Users List</button>
-    <button routerLink="tic-tac-toe">Tic-Tac-Toe</button>
-    <button routerLink="template-form">Template Driven Form</button>
-    <button routerLink="reactive-form">Reactive Form</button>
-    <button routerLink="observable">Observable</button>
+    <button routerLinkActive="activeRoute" routerLink="parent-child">Parent-Child Example</button>
+    <button routerLinkActive="activeRoute" routerLink="services-example">Services Example</button>
+    <button routerLinkActive="activeRoute" routerLink="users-list">Users List</button>
+    <button routerLinkActive="activeRoute" routerLink="tic-tac-toe">Tic-Tac-Toe</button>
+    <button routerLinkActive="activeRoute" routerLink="template-form">Template Driven Form</button>
+    <button routerLinkActive="activeRoute" routerLink="reactive-form">Reactive Form</button>
+    <button routerLinkActive="activeRoute" routerLink="observable">Observable</button>
+    <button routerLink="car-list">Car List</button>
 </div>
+
+<angular2-date-picker [(ngModel)]="date" [settings]="settings"></angular2-date-picker>
 
 <router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+<div class="formGroup" *ngIf="!isLoading">
+  <button type="button" [routerLink]="['/add-car']">Add</button>
+  <div *ngFor="let car of carList">
+    <div *ngIf="car.manufacturer">
+        <strong>{{car.manufacturer}}</strong> {{car.year}} 
+        <button [routerLink]="['/edit-car', car._id]" class="formControl">Edit</button>
+        <button (click)="delete(car._id)" class="formControl">Delete</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="isLoading">
+  <h2>Loading...</h2>
+</div>

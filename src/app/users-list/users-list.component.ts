@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/services/usersService';
 import { User } from 'src/models/user';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-users-list',
@@ -14,11 +16,15 @@ export class UsersListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
+    
+    var parameter = this.route.snapshot.paramMap.get('parameter');
+
+    console.log(parameter);
   }
 
   usersList: User[];
 
-  constructor(usersService: UsersService) {
+  constructor(private route: ActivatedRoute, usersService: UsersService) {
     this.usersService = usersService;
     this.isLoading = false;
   }

@@ -1,0 +1,6 @@
+<div *ngIf="!isLoading">
+  <app-template-driven-form [car]="car" (submit)="update($event)"></app-template-driven-form>
+</div>
+<div *ngIf="isLoading">
+  <h2>Loading...</h2>
+</div>

@@ -34,6 +34,8 @@ export class ObservableExerciseComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("Observable init : :D ");
+
     this.subscription = this.subscribeInputClear();
 
     var checkBox = document.getElementById('clearOnESC') as HTMLInputElement;

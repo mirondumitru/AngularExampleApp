@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Car } from 'src/classes/car';
-import { CarService } from 'src/services/inputService';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -17,10 +16,9 @@ export class ReactiveFormComponent implements OnInit {
   engines = ['Gasoline', 'Diesel', 'Hybrid', 'Full-Electric'];
   formBuilder: FormBuilder;
 
-  constructor(fb: FormBuilder, carService: CarService) {
+  constructor(fb: FormBuilder, ) {
     this.formBuilder = fb;
 
-    this.car = carService.getCar();
 
     this.carForm = this.formBuilder.group({
       manufacturer: [this.car.manufacturer, Validators.required],

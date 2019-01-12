@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GarageService } from 'src/services/inputService';
 import { Car } from 'src/classes/car';
 
 @Component({
@@ -19,10 +18,9 @@ export class BaseViewComponent {
 
   carList:any[];
 
-  garage:GarageService;  
   car:Car;
 
-  constructor(garage:GarageService) {
+  constructor(){
     // this.garage = garage;
     // this.car = new Car();
     // this.car.model = "BMW";
@@ -35,8 +33,6 @@ export class BaseViewComponent {
     console.log("before: ");
   //  console.log(this.car.oilChanged);
 
-
-    this.garage.changeOil(this.car);
 
 
     // console.log("after: ");

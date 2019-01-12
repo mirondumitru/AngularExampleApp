@@ -10,6 +10,9 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ObservableExerciseComponent } from './observable-exercise/observable-exercise.component';
+import { AddCarComponent } from './add-car/add-car.component';
+import { EditCarComponent } from './edit-car/edit-car.component';
+import { CarListComponent } from './car-list/car-list.component';
 
 const routes: Routes = [
   { path: 'base-view', component: BaseViewComponent},
@@ -19,9 +22,13 @@ const routes: Routes = [
   { path: 'parent-child', component: ParentComponent},
   { path: 'tic-tac-toe', component: TicTacToeComponent},
   { path: 'users-list', component: UsersListComponent},
+  { path: 'users-list/:parameter', component: UsersListComponent},
   { path: 'reactive-form', component: ReactiveFormComponent},
   { path: 'template-form', component: TemplateDrivenFormComponent},
   { path: 'observable', component: ObservableExerciseComponent},
+  { path: 'add-car', component: AddCarComponent},
+  { path: 'edit-car/:id', component: EditCarComponent},
+  { path: 'car-list', component: CarListComponent},
   { path: '',
     redirectTo: '/base-view',
     pathMatch: 'full'

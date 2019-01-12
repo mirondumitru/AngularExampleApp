@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Car } from 'src/classes/car';
 
 @Component({
@@ -8,22 +8,20 @@ import { Car } from 'src/classes/car';
 })
 export class TemplateDrivenFormComponent implements OnInit {
 
-  car:Car;
-
   engines = ['Gasoline', 'Diesel', 'Hybrid', 'Full-Electric'];
 
-  constructor() { 
-    this.car = new Car(); 
+  @Input()
+  car:Car;
 
-    this.car.manufacturer = "Mercedes";
-    this.car.engine ="Diesel";
-    this.car.vin = "ASDT112445FASAGTT";
-    this.car.forSale = true;
-    this.car.year = 1993;
+  @Output()
+  submit: EventEmitter<Car> = new EventEmitter();
+
+  constructor() { 
+   
   }
 
   onSubmit(){
-    console.log(this.car);
+    this.submit.emit(this.car);
   }
 
   ngOnInit() {

@@ -10,6 +10,14 @@ import { Router } from '@angular/router';
 export class AppComponent {
   private router:Router;
 
+  date: Date = new Date();
+  settings = {
+      bigBanner: true,
+      timePicker: false,
+      format: 'dd-MM-yyyy',
+      defaultOpen: true
+  }
+  
   constructor(router: Router)  {
     this.router = router;
   }

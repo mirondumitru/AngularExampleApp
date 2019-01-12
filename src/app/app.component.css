@@ -40,3 +40,7 @@ button{
   transform: rotate(45deg);
   transform-origin: 5% 5%;
 }
+
+.activeLink{
+    border:5px solid green;
+}
